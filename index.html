@@ -1,47 +1,234 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-    header { background: #333; color: white; padding: 20px; text-align: center; }
-    section { padding: 20px; margin: 10px; background: white; border-radius: 10px; }
-    h2 { color: #333; }
-    .project { margin-bottom: 15px; }
-    footer { text-align: center; padding: 10px; background: #333; color: white; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f2f2f2;
+}
+
+/* HEADER / LOGO */
+header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* NAV */
+nav {
+  background: #444;
+  text-align: center;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+  background: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* WELCOME BANNER */
+.welcome {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  padding: 60px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* IMAGE */
+img {
+  border-radius: 10px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* GALLERY */
+.gallery img {
+  width: 200px;
+  margin: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+}
+
+/* CAROUSEL */
+.carousel {
+  text-align: center;
+}
+.carousel img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+</style>
 </head>
-<body><header>
+
+<body>
+
+<header>
   <h1>Mysha Rahaman Mehit</h1>
   <p>CSE Student</p>
-</header><section>
-  <h2>About Me</h2>
-  <p>I am a Computer Science and Engineering student. I am passionate about Learning programming, Web technology, Software development concepts and I enjoy building small projects to improve my skills.</p>
-</section><section>
-  <section>
- <h2>My Image</h2>
- <img src="myphoto.jpg" width="200" style="border-radius:10px;">
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+  <a href="#cv">CV</a>
+</nav>
+
+<!-- WELCOME SECTION -->
+<section class="welcome">
+  <h2>Welcome to My Portfolio</h2>
+  <p>Simple & Personal Web Portfolio</p>
 </section>
+
+<!-- IMAGE + ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+
+  <img src="myphoto.jpg" width="200">
+
+  <p>
+    I am a Computer Science and Engineering student.
+    I love programming, web development and learning new technologies.
+  </p>
+
+  <h3>Skills</h3>
   <ul>
-    <li>Programming: C, Java</li>
-    <li>Web: HTML, CSS</li>
-    <li>Database: SQL</li>
+    <li>C Programming</li>
+    <li>Java</li>
+    <li>HTML, CSS</li>
+    <li>SQL</li>
   </ul>
-</section><section>
-  <h2>Projects</h2>  <div class="project">
-    <h3>Student Management System</h3>
-    <p>A system to manage student records using Java and MySQL.</p>
-  </div>  <div class="project">
-    <h3>Library Management System</h3>
-    <p>A database project to manage books and users.</p>
-  </div>  <div class="project">
-    <h3>To-Do List App</h3>
-    <p>A simple task management app using HTML, CSS, and JavaScript.</p>
-  </div></section><section>
+</section>
+
+<!-- DIVIDER -->
+<hr>
+
+<!-- SOCIAL LINKS -->
+<section>
+  <h2>Social Links</h2>
+  <p>
+    <a href="https://github.com/" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+  </p>
+</section>
+
+<!-- CAROUSEL -->
+<section>
+  <h2>Image Carousel</h2>
+
+  <div class="carousel">
+    <img id="slide" src="img1.jpg">
+  </div>
+</section>
+
+<!-- JAVASCRIPT FOR CAROUSEL -->
+<script>
+let images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+let i = 0;
+
+setInterval(() => {
+  i = (i + 1) % images.length;
+  document.getElementById("slide").src = images[i];
+}, 2000);
+</script>
+
+<!-- TABLE (ACADEMIC) -->
+<section>
+  <h2>Academic Qualifications</h2>
+
+  <table>
+    <tr>
+      <th>Exam</th>
+      <th>Institute</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>SSC</td>
+      <td>School Name</td>
+      <td>GPA 5.00</td>
+    </tr>
+    <tr>
+      <td>HSC</td>
+      <td>College Name</td>
+      <td>GPA 5.00</td>
+    </tr>
+  </table>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Gallery</h2>
+
+  <div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section>
+  <h2>Achievements</h2>
+  <ul>
+    <li>Completed C Programming Course</li>
+    <li>Built First Web Project</li>
+    <li>Learning Full Stack Development</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: mehit.1434@gmail.com</p>
-</section><footer>
-  <p>© 2026 Your Name</p>
-</footer></body>
+  <p>Phone: 01XXXXXXXXX</p>
+</section>
+
+<!-- CV DOWNLOAD -->
+<section id="cv">
+  <h2>Download CV</h2>
+
+  <a href="mycv.pdf" download>
+    <button>Download My CV</button>
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 My Portfolio</p>
+</footer>
+
+</body>
 </html>
